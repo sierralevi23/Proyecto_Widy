@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-
+import { Button, ButtonGroup } from '@mui/material';
 import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
 
@@ -11,7 +11,11 @@ export default function TabOneScreen() {
       <EditScreenInfo path="app/(tabs)/index.jsx" />
       <Text style={styles.title}>hola</Text>
       <View>
-        <Text>si</Text>
+      <ButtonGroup variant="contained" aria-label="Basic button group">
+      <Button>One</Button>
+      <Button>Two</Button>
+      <Button>Three</Button>
+      </ButtonGroup>
       </View>
     </View>
   );
