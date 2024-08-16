@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-const PadreList = ({ Padres, onEdit, onDelete }) => {
+const DirectorList = ({ Directores, onEdit, onDelete }) => {
   const [editIndex, setEditIndex] = useState(null);
-  const [editPadre, setEditPadre] = useState({
+  const [editDirector, setEditDirector] = useState({
     nombre: "",
     apellido: "",
     email: "",
@@ -11,46 +11,46 @@ const PadreList = ({ Padres, onEdit, onDelete }) => {
 
   const handleEditChange = (e) => {
     const { name, value } = e.target;
-    setEditPadre({ ...editPadre, [name]: value });
+    setEditDirector({ ...editDirector, [name]: value });
   };
 
   const handleEditSubmit = (e) => {
     e.preventDefault();
-    onEdit(editIndex, editPadre);
+    onEdit(editIndex, editDirector);
     setEditIndex(null);
   };
 
   return (
     <ul>
-      {Padres.map((Padre, index) => (
+      {Directors.map((Director, index) => (
         <li key={index}>
           {editIndex === index ? (
             <form onSubmit={handleEditSubmit}>
               <input
                 type="text"
                 name="nombre"
-                value={editPadre.nombre}
+                value={editDirector.nombre}
                 onChange={handleEditChange}
                 required
               />
               <input
                 type="text"
                 name="apellido"
-                value={editPadre.apellido}
+                value={editDirector.apellido}
                 onChange={handleEditChange}
                 required
               />
               <input
                 type="email"
                 name="email"
-                value={editPadre.email}
+                value={editDirector.email}
                 onChange={handleEditChange}
                 required
               />
               <input
                 type="text"
                 name="telefono"
-                value={editPadre.telefono}
+                value={editDirector.telefono}
                 onChange={handleEditChange}
                 required
               />
@@ -61,12 +61,12 @@ const PadreList = ({ Padres, onEdit, onDelete }) => {
             </form>
           ) : (
             <div>
-              {Padre.nombre} {Padre.apellido} - {Padre.email} -{" "}
-              {Padre.telefono}
+              {Director.nombre} {Director.apellido} - {Director.email} -{" "}
+              {Director.telefono}
               <button
                 onClick={() => {
                   setEditIndex(index);
-                  setEditPadre(Padre);
+                  setEditDirector(Director);
                 }}
               >
                 Editar
@@ -80,4 +80,4 @@ const PadreList = ({ Padres, onEdit, onDelete }) => {
   );
 };
 
-export default PadreList;
+export default DirectorList;

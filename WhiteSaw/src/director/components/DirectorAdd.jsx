@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-Padre
-const PadreAdd = ({ onAdd }) => {
+
+const DirectorAdd = ({ onAdd }) => {
   const [nombre, setNombre] = useState("");
   const [apellido, setApellido] = useState("");
   const [email, setEmail] = useState("");
@@ -8,8 +8,8 @@ const PadreAdd = ({ onAdd }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const nuevoPadre = { nombre, apellido, email, telefono };
-    onAdd(nuevoPadre);
+    const nuevoDirector = { nombre, apellido, email, telefono };
+    onAdd(nuevoDirector);
     setNombre("");
     setApellido(""); 
     setEmail("");
@@ -54,9 +54,9 @@ const PadreAdd = ({ onAdd }) => {
           required
         />
       </div>
-      <button type="submit">Agregar Padre</button>
+      <button type="submit">Agregar Director</button>
     </form>
   );
 };
 
-export default PadreAdd;
+export default DirectorAdd;
