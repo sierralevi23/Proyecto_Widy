@@ -8,10 +8,7 @@ import { useColorScheme } from '@/components/useColorScheme';
 import { useClientOnlyValue } from '@/components/useClientOnlyValue';
 
 // You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
-function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>['name'];
-  color: string;
-}) {
+function TabBarIcon(props) {
   return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
 }
 
@@ -52,6 +49,15 @@ export default function TabLayout() {
         options={{
           title: 'Turnero',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        }}
+      />
+      {/* Nueva pestaña */}
+      <Tabs.Screen
+        name="three"
+        options={{
+          title: 'Inicio Sesion',
+          tabBarIcon: ({ color }) => <TabBarIcon name="cog" color={color} />
+          
         }}
       />
     </Tabs>
