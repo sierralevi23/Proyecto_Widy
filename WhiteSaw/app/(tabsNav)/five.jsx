@@ -2,10 +2,10 @@ import { StyleSheet } from 'react-native';
 import { Button, ButtonGroup } from '@mui/material';
 import { Text, View } from '@/components/Themed';
 
-export default function TabThreeScreen() {
+export default function TabFiveScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Turnos Previos</Text>
+      <Text style={styles.title}>Registrarse</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       
     </View>

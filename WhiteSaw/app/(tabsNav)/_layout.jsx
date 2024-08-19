@@ -27,7 +27,7 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Inicio',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
           headerRight: () => (
             <Link href="/modal" asChild>
               <Pressable>
@@ -48,15 +48,31 @@ export default function TabLayout() {
         name="two"
         options={{
           title: 'Turnero',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="edit" color={color} />,
         }}
       />
       {/* Nueva pestaña */}
       <Tabs.Screen
         name="three"
         options={{
+          title: 'Turnos Previos',
+          tabBarIcon: ({ color }) => <TabBarIcon name="calendar" color={color} />
+          
+        }}
+      />
+      <Tabs.Screen
+        name="four"
+        options={{
           title: 'Inicio Sesion',
-          tabBarIcon: ({ color }) => <TabBarIcon name="cog" color={color} />
+          tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />
+          
+        }}
+      />
+      <Tabs.Screen
+        name="five"
+        options={{
+          title: 'Registrarse',
+          tabBarIcon: ({ color }) => <TabBarIcon name="user-plus" color={color} />
           
         }}
       />
