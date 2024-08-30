@@ -60,22 +60,6 @@ export default function TabLayout() {
           
         }}
       />
-      <Tabs.Screen
-        name="four"
-        options={{
-          title: 'Inicio Sesion',
-          tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />
-          
-        }}
-      />
-      <Tabs.Screen
-        name="five"
-        options={{
-          title: 'Registrarse',
-          tabBarIcon: ({ color }) => <TabBarIcon name="user-plus" color={color} />
-          
-        }}
-      />
     </Tabs>
   );
 }
