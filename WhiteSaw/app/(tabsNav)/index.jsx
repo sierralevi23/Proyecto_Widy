@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+/*import { StyleSheet } from 'react-native';
 import { Button, ButtonGroup } from '@mui/material';
 import { Text, View } from '@/components/Themed';
 import MenuButton from '@/components/MenuButton';
@@ -37,5 +37,23 @@ const styles = StyleSheet.create({
     marginVertical: 30,
     height: 1,
     width: '80%',
+  },
+});
+*/
+
+import { StyleSheet } from 'react-native';
+import MenuButton from '@/components/MenuButton';
+
+export default function TabOneScreen() {
+  return (
+    <MenuButton/>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
