@@ -1,6 +1,4 @@
 import { StyleSheet } from 'react-native';
-import { Button, ButtonGroup } from '@mui/material';
-import { Text, View } from '@/components/Themed';
 
 export default function TabThreeScreen() {
   return (
