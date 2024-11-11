@@ -19,9 +19,22 @@ export const LoginAdminStyles = {
       marginBottom: '15px'
     },
     
+    inputContainer: {
+      position: 'relative',
+      display: 'flex',
+      alignItems: 'center',
+    },
+    
+    inputIcon: {
+      position: 'absolute',
+      left: '10px',
+      color: '#666',
+    },
+    
     input: {
       width: '100%',
       padding: '10px',
+      paddingLeft: '35px',
       border: '1px solid #ddd',
       borderRadius: '4px',
       fontSize: '16px'
@@ -55,18 +68,23 @@ export const LoginAdminStyles = {
     googleLoginBtn: {
       width: '100%',
       padding: '12px',
-      backgroundColor: '#f5f5f5',
-      border: '1px solid #ddd',
+      backgroundColor: '#ffffff',
+      border: '1px solid #dadce0',
       borderRadius: '4px',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      fontSize: '14px',
+      fontWeight: '500',
+      color: '#3c4043',
+      transition: 'background-color 0.2s',
+      gap: '12px',
     },
     
     googleIcon: {
-      width: '20px',
-      marginRight: '10px'
+      width: '18px',
+      height: '18px',
     },
     
     terms: {
