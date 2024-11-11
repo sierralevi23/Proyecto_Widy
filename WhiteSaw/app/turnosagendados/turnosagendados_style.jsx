@@ -1,112 +1,132 @@
 export const TurnosAgendadosStyles = {
   container: {
-    maxWidth: '1200px',
-    margin: '0 auto',
-    padding: '20px',
+    flex: 1,
   },
   
   header: {
-    display: 'flex',
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+    padding: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: 'rgba(221, 221, 221, 0.5)',
+    flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: '30px',
+    zIndex: 1,
+    backdropFilter: 'blur(5px)',
   },
-
-  nav: {
-    display: 'flex',
-    gap: '20px',
-    alignItems: 'center',
+  
+  scrollView: {
+    flex: 1,
   },
-
-  registerBtn: {
-    backgroundColor: '#000',
-    color: 'white',
-    padding: '8px 16px',
-    border: 'none',
-    borderRadius: '4px',
-    cursor: 'pointer',
+  
+  content: {
+    padding: 20,
   },
-
-  title: {
-    textAlign: 'center',
-    marginBottom: '30px',
-  },
-
+  
   calendarioContainer: {
-    backgroundColor: '#fff',
-    borderRadius: '8px',
-    padding: '20px',
-    boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+    borderRadius: 8,
+    padding: 20,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2,
+    backdropFilter: 'blur(5px)',
   },
-
-  mesAnio: {
+  
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 20,
     textAlign: 'center',
-    marginBottom: '20px',
+    color: '#fff',
+    textShadow: '1px 1px 2px rgba(0,0,0,0.2)',
   },
-
+  
+  mesAnio: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  
+  mesAnioText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#000',
+  },
+  
   calendario: {
-    border: '1px solid #ddd',
-    borderRadius: '4px',
+    borderWidth: 1,
+    borderColor: 'rgba(221, 221, 221, 0.5)',
+    borderRadius: 4,
+    backgroundColor: 'rgba(255, 255, 255, 0.95)',
   },
-
+  
   diasSemana: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(7, 1fr)',
-    borderBottom: '1px solid #ddd',
+    flexDirection: 'row',
+    borderBottomWidth: 1,
+    borderBottomColor: 'rgba(221, 221, 221, 0.5)',
+    backgroundColor: 'rgba(248, 248, 248, 0.9)',
   },
-
+  
   diaSemana: {
-    padding: '10px',
+    flex: 1,
+    padding: 10,
     textAlign: 'center',
     fontWeight: 'bold',
+    color: '#000',
   },
-
+  
   dias: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(7, 1fr)',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
   },
-
+  
   dia: {
-    padding: '20px',
-    textAlign: 'center',
-    border: '1px solid #ddd',
-    minHeight: '80px',
+    width: `${100/7}%`,
+    padding: 10,
+    borderRightWidth: 1,
+    borderBottomWidth: 1,
+    borderColor: 'rgba(221, 221, 221, 0.5)',
+    minHeight: 100,
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
   },
-
-  turnosContainer: {
-    marginTop: '40px',
+  
+  turnosDelDia: {
+    marginTop: 5,
   },
-
-  motivosGrid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(3, 1fr)',
-    gap: '20px',
-    marginTop: '20px',
+  
+  turno: {
+    fontSize: 12,
+    color: '#333',
+    marginTop: 2,
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+    padding: 4,
+    borderRadius: 4,
   },
-
-  motivoCard: {
-    display: 'flex',
+  
+  headerButtons: {
+    flexDirection: 'row',
     alignItems: 'center',
-    padding: '15px',
-    backgroundColor: '#f5f5f5',
-    borderRadius: '8px',
-    gap: '15px',
+    gap: 16,
   },
-
-  avatarContainer: {
-    width: '40px',
-    height: '40px',
+  
+  registerBtn: {
+    backgroundColor: '#000',
+    padding: 8,
+    paddingHorizontal: 16,
+    borderRadius: 4,
   },
-
-  avatar: {
-    width: '100%',
-    height: '100%',
-    borderRadius: '50%',
-    backgroundColor: '#ddd',
+  
+  registerBtnText: {
+    color: '#fff',
   },
-
-  motivoInfo: {
-    flex: 1,
+  
+  headerLink: {
+    color: '#000',
+    fontWeight: '500',
   },
 };
 

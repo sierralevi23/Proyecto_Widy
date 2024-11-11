@@ -1,112 +1,111 @@
 export const InicioAdminStyles = {
-    container: {
-      maxWidth: '1200px',
-      margin: '0 auto',
-      padding: '20px'
-    },
-    
-    header: {
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      marginBottom: '30px'
-    },
-    
-    logo: {
-      fontSize: '1.5rem',
-      fontWeight: 'bold'
-    },
-    
-    nav: {
-      display: 'flex',
-      gap: '20px',
-      alignItems: 'center'
-    },
-    
-    registerBtn: {
-      backgroundColor: '#000',
-      color: 'white',
-      padding: '8px 16px',
-      border: 'none',
-      borderRadius: '4px',
-      cursor: 'pointer'
-    },
-    
-    mainContent: {
-      display: 'flex',
-      gap: '40px'
-    },
-    
-    leftSection: {
-      flex: '2'
-    },
-    
-    rightSection: {
-      flex: '1'
-    },
-    
-    noticias: {
-      marginBottom: '40px'
-    },
-    
-    paginasInteres: {
-      marginTop: '30px'
-    },
-    
-    accordion: {
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '10px'
-    },
-    
-    accordionItem: {
-      border: '1px solid #ddd',
-      padding: '10px',
-      borderRadius: '4px'
-    },
-    
-    asesores: {
-      marginBottom: '30px'
-    },
-    
-    profesores: {
-      marginBottom: '30px'
-    },
-    
-    list: {
-      listStyle: 'none',
-      padding: 0,
-      marginBottom: '20px'
-    },
-    
-    verMasBtn: {
-      width: '100%',
-      padding: '10px',
-      backgroundColor: '#000',
-      color: 'white',
-      border: 'none',
-      borderRadius: '4px',
-      cursor: 'pointer'
-    },
-    
-    footer: {
-      marginTop: '50px',
-      borderTop: '1px solid #ddd',
-      paddingTop: '30px'
-    },
-    
-    socialLinks: {
-      display: 'flex',
-      gap: '20px',
-      justifyContent: 'center',
-      marginBottom: '30px'
-    },
-    
-    footerPages: {
-      display: 'grid',
-      gridTemplateColumns: 'repeat(4, 1fr)',
-      gap: '20px'
-    }
-  };
+  container: {
+    flex: 1,
+    backgroundColor: '#f5f5f5',
+  },
+  
+  header: {
+    backgroundColor: '#fff',
+    padding: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: '#ddd',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  
+  scrollView: {
+    flex: 1,
+  },
+  
+  content: {
+    flexDirection: 'row',
+    padding: 20,
+    gap: 40,
+  },
+  
+  leftColumn: {
+    flex: 2,
+  },
+  
+  rightColumn: {
+    flex: 1,
+  },
+  
+  section: {
+    backgroundColor: '#fff',
+    padding: 20,
+    borderRadius: 8,
+    marginBottom: 20,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+  },
+  
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 20,
+  },
+  
+  sectionTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 16,
+  },
+  
+  card: {
+    borderWidth: 1,
+    borderColor: '#ddd',
+    padding: 16,
+    borderRadius: 4,
+    marginBottom: 16,
+  },
+  
+  cardTitle: {
+    fontWeight: 'bold',
+    marginBottom: 8,
+  },
+  
+  verMasBtn: {
+    backgroundColor: '#000',
+    padding: 12,
+    borderRadius: 4,
+    alignItems: 'center',
+    marginTop: 16,
+  },
+  
+  verMasText: {
+    color: '#fff',
+    fontWeight: 'bold',
+  },
+  
+  headerButtons: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 16,
+  },
+  
+  registerBtn: {
+    backgroundColor: '#000',
+    padding: 8,
+    paddingHorizontal: 16,
+    borderRadius: 4,
+  },
+  
+  registerBtnText: {
+    color: '#fff',
+  },
+  
+  headerLink: {
+    color: '#000',
+  },
+  
+  link: {
+    color: 'blue',
+    textDecorationLine: 'underline',
+  },
+};
 
-export default InicioAdminStyles;
+export default InicioAdminStyles;   

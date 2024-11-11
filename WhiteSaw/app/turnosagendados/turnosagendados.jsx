@@ -1,78 +1,89 @@
 import React from 'react';
+import { ScrollView, View, Text, TouchableOpacity } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
+import FeatherIcon from 'feather-icons-react';
 import { TurnosAgendadosStyles } from './turnosagendados_style';
 
 const TurnosAgendados = () => {
-  // Array de días de la semana
-  const diasSemana = ['LUNES', 'MARTES', 'MIÉRCOLES', 'JUEVES', 'VIERNES', 'SÁBADO', 'DOMINGO'];
-  
-  // Datos de ejemplo para los motivos
-  const motivos = [
-    { id: 1, nombre: 'Name', descripcion: 'Description' },
-    { id: 2, nombre: 'Name', descripcion: 'Description' },
-    { id: 3, nombre: 'Name', descripcion: 'Description' },
-    { id: 4, nombre: 'Name', descripcion: 'Description' },
-    { id: 5, nombre: 'Name', descripcion: 'Description' },
-    { id: 6, nombre: 'Name', descripcion: 'Description' },
-    { id: 7, nombre: 'Name', descripcion: 'Description' },
-    { id: 8, nombre: 'Name', descripcion: 'Description' },
-    { id: 9, nombre: 'Name', descripcion: 'Description' },
-  ];
-
   return (
-    <div style={TurnosAgendadosStyles.container}>
-      <header style={TurnosAgendadosStyles.header}>
-        <div style={TurnosAgendadosStyles.logo}>Asesoría E.P.E.T N°20</div>
-        <nav style={TurnosAgendadosStyles.nav}>
-          <a href="#inicio">Inicio</a>
-          <a href="#turnero">Turnero</a>
-          <a href="#turnos">Turnos Vigentes</a>
-          <button style={TurnosAgendadosStyles.registerBtn}>Registrarse</button>
-        </nav>
-      </header>
+    <View style={TurnosAgendadosStyles.container}>
+      <LinearGradient
+        colors={['#FF6B6B', '#FF758C', '#DE6EFD']}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={{
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          top: 0,
+          bottom: 0,
+        }}
+      />
 
-      <h1 style={TurnosAgendadosStyles.title}>Calendario de Turnos</h1>
-      
-      <div style={TurnosAgendadosStyles.calendarioContainer}>
-        <div style={TurnosAgendadosStyles.mesAnio}>
-          <h2>Noviembre 2023</h2>
-        </div>
+      {/* Header fijo */}
+      <View style={TurnosAgendadosStyles.header}>
+        <Text style={TurnosAgendadosStyles.headerTitle}>Asesoría E.P.E.T N°20</Text>
+        <View style={TurnosAgendadosStyles.headerButtons}>
+          <TouchableOpacity>
+            <Text style={TurnosAgendadosStyles.headerLink}>Turnero</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Text style={TurnosAgendadosStyles.headerLink}>Turnos Vigentes</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={TurnosAgendadosStyles.registerBtn}>
+            <Text style={TurnosAgendadosStyles.registerBtnText}>Registrarse</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
 
-        <div style={TurnosAgendadosStyles.calendario}>
-          <div style={TurnosAgendadosStyles.diasSemana}>
-            {diasSemana.map(dia => (
-              <div key={dia} style={TurnosAgendadosStyles.diaSemana}>{dia}</div>
-            ))}
-          </div>
+      {/* Contenido scrolleable */}
+      <ScrollView 
+        style={TurnosAgendadosStyles.scrollView}
+        showsVerticalScrollIndicator={true}
+      >
+        <View style={TurnosAgendadosStyles.content}>
+          <Text style={TurnosAgendadosStyles.title}>Turnos Agendados</Text>
 
-          <div style={TurnosAgendadosStyles.dias}>
-            {/* Aquí irían los días del mes */}
-            {/* Por simplicidad, solo mostramos la estructura */}
-            {Array(35).fill(null).map((_, index) => (
-              <div key={index} style={TurnosAgendadosStyles.dia}>
-                {index + 1}
-              </div>
-            ))}
-          </div>
-        </div>
+          <View style={TurnosAgendadosStyles.calendarioContainer}>
+            <View style={TurnosAgendadosStyles.mesAnio}>
+              <TouchableOpacity>
+                <FeatherIcon icon="chevron-left" size={24} />
+              </TouchableOpacity>
+              <Text style={TurnosAgendadosStyles.mesAnioText}>Marzo 2024</Text>
+              <TouchableOpacity>
+                <FeatherIcon icon="chevron-right" size={24} />
+              </TouchableOpacity>
+            </View>
 
-        <div style={TurnosAgendadosStyles.turnosContainer}>
-          <h3>Motivos:</h3>
-          <div style={TurnosAgendadosStyles.motivosGrid}>
-            {motivos.map(motivo => (
-              <div key={motivo.id} style={TurnosAgendadosStyles.motivoCard}>
-                <div style={TurnosAgendadosStyles.avatarContainer}>
-                  <div style={TurnosAgendadosStyles.avatar}></div>
-                </div>
-                <div style={TurnosAgendadosStyles.motivoInfo}>
-                  <h4>{motivo.nombre}</h4>
-                  <p>{motivo.descripcion}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
+            <View style={TurnosAgendadosStyles.calendario}>
+              <View style={TurnosAgendadosStyles.diasSemana}>
+                <Text style={TurnosAgendadosStyles.diaSemana}>Dom</Text>
+                <Text style={TurnosAgendadosStyles.diaSemana}>Lun</Text>
+                <Text style={TurnosAgendadosStyles.diaSemana}>Mar</Text>
+                <Text style={TurnosAgendadosStyles.diaSemana}>Mié</Text>
+                <Text style={TurnosAgendadosStyles.diaSemana}>Jue</Text>
+                <Text style={TurnosAgendadosStyles.diaSemana}>Vie</Text>
+                <Text style={TurnosAgendadosStyles.diaSemana}>Sáb</Text>
+              </View>
+
+              <View style={TurnosAgendadosStyles.dias}>
+                {/* Ejemplo de días del calendario */}
+                {[...Array(31)].map((_, index) => (
+                  <View key={index} style={TurnosAgendadosStyles.dia}>
+                    <Text>{index + 1}</Text>
+                    {/* Aquí puedes agregar los turnos para cada día */}
+                    <View style={TurnosAgendadosStyles.turnosDelDia}>
+                      <Text style={TurnosAgendadosStyles.turno}>9:00 - Karina</Text>
+                      <Text style={TurnosAgendadosStyles.turno}>11:30 - El Cuervo</Text>
+                    </View>
+                  </View>
+                ))}
+              </View>
+            </View>
+          </View>
+        </View>
+      </ScrollView>
+    </View>
   );
 };
 

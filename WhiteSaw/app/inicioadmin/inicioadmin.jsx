@@ -1,119 +1,98 @@
 import React from 'react';
-import { InicioAdminStyles } from './inicioadmin_style.jsx';
+import { ScrollView, View, Text, TouchableOpacity } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
+import { InicioAdminStyles } from './inicioadmin_style';
 
 const InicioAdmin = () => {
-  const asesores = [
-    { nombre: 'Karina (Turno Mañana)' },
-    { nombre: 'El Cuervo (Turno Tarde)' },
-    { nombre: 'Josefina (Turno Vespertino)' },
-    { nombre: 'Feature' },
-    { nombre: 'Feature' }
-  ];
-
-  const profesores = [
-    { nombre: 'Ezequiel Wiedermann' },
-    { nombre: 'Sebastian Collien' },
-    { nombre: 'Christian Cantero' },
-    { nombre: 'Roque' },
-    { nombre: 'Feature' }
-  ];
-
   return (
-    <div style={InicioAdminStyles.container}>
-      <header style={InicioAdminStyles.header}>
-        <div style={InicioAdminStyles.logo}>Asesoría E.P.E.T N°20</div>
-        <nav style={InicioAdminStyles.nav}>
-          <a href="#turnero">Turnero</a>
-          <a href="#turnos">Turnos Vigentes</a>
-          <button style={InicioAdminStyles.registerBtn}>Registrarse</button>
-        </nav>
-      </header>
+    <View style={InicioAdminStyles.container}>
+      <LinearGradient
+        colors={['#FF6B6B', '#FF758C', '#DE6EFD']}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={{
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          top: 0,
+          bottom: 0,
+        }}
+      />
+      
+      {/* Header fijo */}
+      <View style={InicioAdminStyles.header}>
+        <Text style={InicioAdminStyles.headerTitle}>Asesoría E.P.E.T N°20</Text>
+        <View style={InicioAdminStyles.headerButtons}>
+          <TouchableOpacity>
+            <Text style={InicioAdminStyles.headerLink}>Turnero</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Text style={InicioAdminStyles.headerLink}>Turnos Vigentes</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={InicioAdminStyles.registerBtn}>
+            <Text style={InicioAdminStyles.registerBtnText}>Registrarse</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
 
-      <main style={InicioAdminStyles.mainContent}>
-        <div style={InicioAdminStyles.leftSection}>
-          <h1>Inicio</h1>
-          
-          <section style={InicioAdminStyles.noticias}>
-            <h2>Noticias de la Asesoría</h2>
-            <p>acá se van a poner las noticias que los asesores quieran poner. Por ejemplo:</p>
-            <p>"Hoy las asesora Karina no va venir y se cancelan sus citas antes previstas"</p>
-          </section>
+      {/* Contenido scrolleable */}
+      <ScrollView 
+        style={InicioAdminStyles.scrollView}
+        showsVerticalScrollIndicator={true}
+      >
+        <View style={InicioAdminStyles.content}>
+          <View style={InicioAdminStyles.leftColumn}>
+            <Text style={InicioAdminStyles.title}>Inicio</Text>
+            
+            <View style={InicioAdminStyles.section}>
+              <Text style={InicioAdminStyles.sectionTitle}>Noticias de la Asesoría</Text>
+              <Text>acá se van a poner las noticias que los asesores quieran poner. Por ejemplo:</Text>
+              <Text>"Hoy las asesora Karina no va venir y se cancelan sus citas antes previstas"</Text>
+            </View>
 
-          <section style={InicioAdminStyles.paginasInteres}>
-            <h2>Paginas de Interes</h2>
-            <div style={InicioAdminStyles.accordion}>
-              <div style={InicioAdminStyles.accordionItem}>
-                <h3>Página de la EPET N°20 +</h3>
-                <p>Para buscar más información de la escuela, ingrese al link: https://epet20.com.ar</p>
-              </div>
-              <div style={InicioAdminStyles.accordionItem}>
-                <h3>Sacar turno con el Asesor Pedagógico +</h3>
-              </div>
-              <div style={InicioAdminStyles.accordionItem}>
-                <h3>Ya tenías turno? +</h3>
-              </div>
-            </div>
-          </section>
-        </div>
+            <View style={InicioAdminStyles.section}>
+              <Text style={InicioAdminStyles.sectionTitle}>Paginas de Interes</Text>
+              <View style={InicioAdminStyles.card}>
+                <Text style={InicioAdminStyles.cardTitle}>Página de la EPET N°20 +</Text>
+                <Text>Para buscar más información de la escuela, ingrese al link:</Text>
+                <Text style={InicioAdminStyles.link}>https://epet20.com.ar</Text>
+              </View>
+              
+              <View style={InicioAdminStyles.card}>
+                <Text style={InicioAdminStyles.cardTitle}>Sacar turno con el Asesor Pedagógico +</Text>
+              </View>
+              
+              <View style={InicioAdminStyles.card}>
+                <Text style={InicioAdminStyles.cardTitle}>¿Ya tenías turno? +</Text>
+              </View>
+            </View>
+          </View>
 
-        <div style={InicioAdminStyles.rightSection}>
-          <section style={InicioAdminStyles.asesores}>
-            <h2>Asesores Pedagógicos</h2>
-            <ul style={InicioAdminStyles.list}>
-              {asesores.map((asesor, index) => (
-                <li key={index}>{asesor.nombre}</li>
-              ))}
-            </ul>
-            <button style={InicioAdminStyles.verMasBtn}>Ver más</button>
-          </section>
+          <View style={InicioAdminStyles.rightColumn}>
+            <View style={InicioAdminStyles.section}>
+              <Text style={InicioAdminStyles.sectionTitle}>Asesores Pedagógicos</Text>
+              <Text>Karina (Turno Mañana)</Text>
+              <Text>El Cuervo (Turno Tarde)</Text>
+              <Text>Josefina (Turno Vespertino)</Text>
+              <TouchableOpacity style={InicioAdminStyles.verMasBtn}>
+                <Text style={InicioAdminStyles.verMasText}>Ver más</Text>
+              </TouchableOpacity>
+            </View>
 
-          <section style={InicioAdminStyles.profesores}>
-            <h2>Profesores</h2>
-            <ul style={InicioAdminStyles.list}>
-              {profesores.map((profesor, index) => (
-                <li key={index}>{profesor.nombre}</li>
-              ))}
-            </ul>
-            <button style={InicioAdminStyles.verMasBtn}>Ver más</button>
-          </section>
-        </div>
-      </main>
-
-      <footer style={InicioAdminStyles.footer}>
-        <div style={InicioAdminStyles.socialLinks}>
-          <a href="#">Facebook</a>
-          <a href="#">LinkedIn</a>
-          <a href="#">YouTube</a>
-          <a href="#">Instagram</a>
-        </div>
-        <div style={InicioAdminStyles.footerPages}>
-          <div>
-            <p>Site name</p>
-            <p>Page</p>
-            <p>Page</p>
-            <p>Page</p>
-          </div>
-          <div>
-            <p>Topic</p>
-            <p>Page</p>
-            <p>Page</p>
-            <p>Page</p>
-          </div>
-          <div>
-            <p>Topic</p>
-            <p>Page</p>
-            <p>Page</p>
-            <p>Page</p>
-          </div>
-          <div>
-            <p>Topic</p>
-            <p>Page</p>
-            <p>Page</p>
-            <p>Page</p>
-          </div>
-        </div>
-      </footer>
-    </div>
+            <View style={InicioAdminStyles.section}>
+              <Text style={InicioAdminStyles.sectionTitle}>Profesores</Text>
+              <Text>Ezequiel Wiedermann</Text>
+              <Text>Sebastian Collien</Text>
+              <Text>Christian Cantero</Text>
+              <Text>Roque</Text>
+              <TouchableOpacity style={InicioAdminStyles.verMasBtn}>
+                <Text style={InicioAdminStyles.verMasText}>Ver más</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </ScrollView>
+    </View>
   );
 };
 
