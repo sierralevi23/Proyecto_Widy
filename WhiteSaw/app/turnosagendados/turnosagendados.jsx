@@ -5,6 +5,32 @@ import FeatherIcon from 'feather-icons-react';
 import { TurnosAgendadosStyles } from './turnosagendados_style';
 
 const TurnosAgendados = () => {
+  const [currentDate, setCurrentDate] = React.useState(new Date(2024, 2, 1));
+
+  const handlePrevMonth = () => {
+    setCurrentDate(prevDate => {
+      const newDate = new Date(prevDate);
+      newDate.setMonth(prevDate.getMonth() - 1);
+      return newDate;
+    });
+  };
+
+  const handleNextMonth = () => {
+    setCurrentDate(prevDate => {
+      const newDate = new Date(prevDate);
+      newDate.setMonth(prevDate.getMonth() + 1);
+      return newDate;
+    });
+  };
+
+  const formatMonthYear = (date) => {
+    const months = [
+      'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+      'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+    ];
+    return `${months[date.getMonth()]} ${date.getFullYear()}`;
+  };
+
   return (
     <View style={TurnosAgendadosStyles.container}>
       <LinearGradient
@@ -46,11 +72,13 @@ const TurnosAgendados = () => {
 
           <View style={TurnosAgendadosStyles.calendarioContainer}>
             <View style={TurnosAgendadosStyles.mesAnio}>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={handlePrevMonth}>
                 <FeatherIcon icon="chevron-left" size={24} />
               </TouchableOpacity>
-              <Text style={TurnosAgendadosStyles.mesAnioText}>Marzo 2024</Text>
-              <TouchableOpacity>
+              <Text style={TurnosAgendadosStyles.mesAnioText}>
+                {formatMonthYear(currentDate)}
+              </Text>
+              <TouchableOpacity onPress={handleNextMonth}>
                 <FeatherIcon icon="chevron-right" size={24} />
               </TouchableOpacity>
             </View>
@@ -67,17 +95,36 @@ const TurnosAgendados = () => {
               </View>
 
               <View style={TurnosAgendadosStyles.dias}>
-                {/* Ejemplo de días del calendario */}
-                {[...Array(31)].map((_, index) => (
-                  <View key={index} style={TurnosAgendadosStyles.dia}>
-                    <Text>{index + 1}</Text>
-                    {/* Aquí puedes agregar los turnos para cada día */}
-                    <View style={TurnosAgendadosStyles.turnosDelDia}>
-                      <Text style={TurnosAgendadosStyles.turno}>9:00 - Karina</Text>
-                      <Text style={TurnosAgendadosStyles.turno}>11:30 - El Cuervo</Text>
-                    </View>
+                {/* Agregar espacios vacíos para el primer día del mes */}
+                {[...Array(new Date(currentDate.getFullYear(), currentDate.getMonth(), 1).getDay())].map((_, index) => (
+                  <View key={`empty-${index}`} style={TurnosAgendadosStyles.dia}>
+                    <Text> </Text>
                   </View>
                 ))}
+
+                {/* Renderizar los días del mes */}
+                {[...Array(new Date(
+                  currentDate.getFullYear(),
+                  currentDate.getMonth() + 1,
+                  0
+                ).getDate())].map((_, index) => {
+                  const fecha = new Date(
+                    currentDate.getFullYear(),
+                    currentDate.getMonth(),
+                    index + 1
+                  );
+                  const dia = fecha.getDay();
+                  const esFinDeSemana = dia === 0 || dia === 6;
+
+                  return (
+                    <View key={`day-${index}`} style={[
+                      TurnosAgendadosStyles.dia,
+                      esFinDeSemana && TurnosAgendadosStyles.diaInactivo
+                    ]}>
+                      <Text>{index + 1}</Text>
+                    </View>
+                  );
+                })}
               </View>
             </View>
           </View>
