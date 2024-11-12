@@ -47,6 +47,74 @@ const CustomDrawerContent = (props) => {
           <Text style={styles.menuText}>Turnos Agendados</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
+          <FeatherIcon icon="" size={24} color="#666" />
+          <Text style={styles.menuText}></Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
+          <FeatherIcon icon="" size={24} color="#666" />
+          <Text style={styles.menuText}></Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
+          <FeatherIcon icon="" size={24} color="#666" />
+          <Text style={styles.menuText}></Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
+          <FeatherIcon icon="" size={24} color="#666" />
+          <Text style={styles.menuText}></Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
+          <FeatherIcon icon="" size={24} color="#666" />
+          <Text style={styles.menuText}></Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
+          <FeatherIcon icon="" size={24} color="#666" />
+          <Text style={styles.menuText}></Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
+          <FeatherIcon icon="" size={24} color="#666" />
+          <Text style={styles.menuText}></Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
+          <FeatherIcon icon="" size={24} color="#666" />
+          <Text style={styles.menuText}></Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
+          <FeatherIcon icon="" size={24} color="#666" />
+          <Text style={styles.menuText}></Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
+          <FeatherIcon icon="" size={24} color="#666" />
+          <Text style={styles.menuText}></Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
+          <FeatherIcon icon="" size={24} color="#666" />
+          <Text style={styles.menuText}></Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
+          <FeatherIcon icon="" size={24} color="#666" />
+          <Text style={styles.menuText}></Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
+          <FeatherIcon icon="" size={24} color="#666" />
+          <Text style={styles.menuText}></Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
+          <FeatherIcon icon="" size={24} color="#666" />
+          <Text style={styles.menuText}></Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
+          <FeatherIcon icon="" size={24} color="#666" />
+          <Text style={styles.menuText}></Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
+          <FeatherIcon icon="" size={24} color="#666" />
+          <Text style={styles.menuText}></Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
+          <FeatherIcon icon="" size={24} color="#666" />
+          <Text style={styles.menuText}></Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
           <FeatherIcon icon="log-out" size={24} color="#666" />
           <Text style={styles.menuText}>Cerrar Sesión</Text>
         </TouchableOpacity>

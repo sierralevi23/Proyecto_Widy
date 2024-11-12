@@ -20,7 +20,7 @@ const InicioAdmin = () => {
       />
       
       {/* Header fijo */}
-      <View style={InicioAdminStyles.header}>
+      {/*<View style={InicioAdminStyles.header}>
         <Text style={InicioAdminStyles.headerTitle}>Asesoría E.P.E.T N°20</Text>
         <View style={InicioAdminStyles.headerButtons}>
           <TouchableOpacity>
@@ -33,7 +33,7 @@ const InicioAdmin = () => {
             <Text style={InicioAdminStyles.registerBtnText}>Registrarse</Text>
           </TouchableOpacity>
         </View>
-      </View>
+      </View>*/}
 
       {/* Contenido scrolleable */}
       <ScrollView 
@@ -81,8 +81,8 @@ const InicioAdmin = () => {
 
             <View style={InicioAdminStyles.section}>
               <Text style={InicioAdminStyles.sectionTitle}>Profesores</Text>
-              <Text>Ezequiel Wiedermann</Text>
-              <Text>Sebastian Collien</Text>
+              <Text>Exequiel Wiedermann</Text>
+              <Text>Sebastian Colillan</Text>
               <Text>Christian Cantero</Text>
               <Text>Roque</Text>
               <TouchableOpacity style={InicioAdminStyles.verMasBtn}>
