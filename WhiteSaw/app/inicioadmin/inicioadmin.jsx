@@ -51,7 +51,7 @@ const InicioAdmin = () => {
             </View>
 
             <View style={InicioAdminStyles.section}>
-              <Text style={InicioAdminStyles.sectionTitle}>Paginas de Interes</Text>
+              <Text style={InicioAdminStyles.sectionTitle}>Información de Interes</Text>
               <View style={InicioAdminStyles.card}>
                 <Text style={InicioAdminStyles.cardTitle}>Página de la EPET N°20 +</Text>
                 <Text>Para buscar más información de la escuela, ingrese al link:</Text>
