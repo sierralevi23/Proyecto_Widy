@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import FeatherIcon from 'feather-icons-react';
@@ -10,6 +10,11 @@ import TurnosAgendados from '../turnosagendados/turnosagendados';
 const Drawer = createDrawerNavigator();
 
 const CustomDrawerContent = (props) => {
+  const [userInfo, setUserInfo] = useState({
+    email: 'usuario@ejemplo.com',
+    avatar: 'user', // Cambia esto por la URL de la imagen del avatar si es necesario
+  });
+
   return (
     <View style={styles.container}>
       {/* Botón de cierre */}
@@ -23,9 +28,9 @@ const CustomDrawerContent = (props) => {
       {/* Header del Drawer con avatar y correo */}
       <View style={styles.userSection}>
         <View style={styles.avatarContainer}>
-          <FeatherIcon icon="user" size={60} color="#666" />
+          <FeatherIcon icon={userInfo.avatar} size={60} color="#666" />
         </View>
-        <Text style={styles.emailText}>usuario@ejemplo.com</Text>
+        <Text style={styles.emailText}>{userInfo.email}</Text>
       </View>
 
       {/* Opciones del menú */}
@@ -34,85 +39,9 @@ const CustomDrawerContent = (props) => {
           <FeatherIcon icon="home" size={24} color="#666" />
           <Text style={styles.menuText}>Inicio</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('Turnero')}>
-          <FeatherIcon icon="clipboard" size={24} color="#666" />
-          <Text style={styles.menuText}>Turnero</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('TurnosVigentes')}>
-          <FeatherIcon icon="check-circle" size={24} color="#666" />
-          <Text style={styles.menuText}>Turnos Vigentes</Text>
-        </TouchableOpacity>
         <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('TurnosAgendados')}>
           <FeatherIcon icon="calendar" size={24} color="#666" />
           <Text style={styles.menuText}>Turnos Agendados</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
-          <FeatherIcon icon="" size={24} color="#666" />
-          <Text style={styles.menuText}></Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
-          <FeatherIcon icon="" size={24} color="#666" />
-          <Text style={styles.menuText}></Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
-          <FeatherIcon icon="" size={24} color="#666" />
-          <Text style={styles.menuText}></Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
-          <FeatherIcon icon="" size={24} color="#666" />
-          <Text style={styles.menuText}></Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
-          <FeatherIcon icon="" size={24} color="#666" />
-          <Text style={styles.menuText}></Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
-          <FeatherIcon icon="" size={24} color="#666" />
-          <Text style={styles.menuText}></Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
-          <FeatherIcon icon="" size={24} color="#666" />
-          <Text style={styles.menuText}></Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
-          <FeatherIcon icon="" size={24} color="#666" />
-          <Text style={styles.menuText}></Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
-          <FeatherIcon icon="" size={24} color="#666" />
-          <Text style={styles.menuText}></Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
-          <FeatherIcon icon="" size={24} color="#666" />
-          <Text style={styles.menuText}></Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
-          <FeatherIcon icon="" size={24} color="#666" />
-          <Text style={styles.menuText}></Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
-          <FeatherIcon icon="" size={24} color="#666" />
-          <Text style={styles.menuText}></Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
-          <FeatherIcon icon="" size={24} color="#666" />
-          <Text style={styles.menuText}></Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
-          <FeatherIcon icon="" size={24} color="#666" />
-          <Text style={styles.menuText}></Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
-          <FeatherIcon icon="" size={24} color="#666" />
-          <Text style={styles.menuText}></Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
-          <FeatherIcon icon="" size={24} color="#666" />
-          <Text style={styles.menuText}></Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
-          <FeatherIcon icon="" size={24} color="#666" />
-          <Text style={styles.menuText}></Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
           <FeatherIcon icon="log-out" size={24} color="#666" />
@@ -172,17 +101,20 @@ function DrawerNavigator() {
       initialRouteName="InicioAdmin"
       drawerContent={(props) => <CustomDrawerContent {...props} />}
     >
-      <Drawer.Screen 
+      <Drawer.Screen
         name="InicioAdmin" 
         component={InicioAdmin}
+        options={{ title: '' }}
       />
       <Drawer.Screen 
         name="TurnosAgendados" 
         component={TurnosAgendados}
+        options={{ title: '' }}
       />
       <Drawer.Screen 
         name="LoginAdmin" 
         component={LoginAdmin}
+        options={{ title: '' }}
       />
     </Drawer.Navigator>
   );
