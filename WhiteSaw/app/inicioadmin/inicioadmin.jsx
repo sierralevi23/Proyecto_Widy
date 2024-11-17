@@ -15,6 +15,7 @@ const InicioAdmin = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [showAdvisorsList, setShowAdvisorsList] = useState(false);
   const [showTeachersList, setShowTeachersList] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   const advisors = [
     'Karina (Turno Mañana)',
@@ -59,7 +60,11 @@ const InicioAdmin = () => {
       >
         <View style={InicioAdminStyles.content}>
           <View style={InicioAdminStyles.leftColumn}>
-            <View style={InicioAdminStyles.section}>
+            <View 
+              style={InicioAdminStyles.section}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
               <Text style={InicioAdminStyles.sectionTitle}>Noticias de la Asesoría</Text>
               <Image
                 source={{ uri: 'https://www.rionegro.com.ar/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-03-at-16.06.46.jpeg' }} // Reemplaza con la URL de tu imagen
@@ -75,9 +80,11 @@ const InicioAdmin = () => {
               ) : (
                 <Text>{newsText}</Text>
               )}
-              <TouchableOpacity onPress={handleEditToggle} style={styles.circleButton}>
-                <Text style={styles.buttonText}>{isEditing ? '✓' : '+'}</Text>
-              </TouchableOpacity>
+              {isHovered && (
+                <TouchableOpacity onPress={handleEditToggle} style={styles.circleButton}>
+                  <Text style={styles.buttonText}>{isEditing ? '✓' : '+'}</Text>
+                </TouchableOpacity>
+              )}
             </View>
 
             <View style={InicioAdminStyles.section}>

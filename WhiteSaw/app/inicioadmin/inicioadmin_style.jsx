@@ -106,6 +106,23 @@ export const InicioAdminStyles = {
     color: 'blue',
     textDecorationLine: 'underline',
   },
+  
+  circleButton: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    backgroundColor: '#000',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    bottom: 10,
+    right: 10,
+  },
+  
+  buttonText: {
+    color: '#fff',
+    fontSize: 24,
+  },
 };
 
 export default InicioAdminStyles;   
