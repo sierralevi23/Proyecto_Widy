@@ -6,6 +6,7 @@ import FeatherIcon from 'feather-icons-react';
 import InicioAdmin from '../inicioadmin/inicioadmin';
 import LoginAdmin from '../loginadmin/loginadmin';
 import TurnosAgendados from '../turnosagendados/turnosagendados';
+import Turnero from '../turnero/turnero';
 
 const Drawer = createDrawerNavigator();
 
@@ -38,6 +39,10 @@ const CustomDrawerContent = (props) => {
         <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('InicioAdmin')}>
           <FeatherIcon icon="home" size={24} color="#666" />
           <Text style={styles.menuText}>Inicio</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('Turnero')}>
+          <FeatherIcon icon="check-circle" size={24} color="#666" />
+          <Text style={styles.menuText}>Turnero</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('TurnosAgendados')}>
           <FeatherIcon icon="calendar" size={24} color="#666" />
@@ -105,6 +110,11 @@ function DrawerNavigator() {
         name="InicioAdmin" 
         component={InicioAdmin}
         options={{ title: '' }}
+      />
+      <Drawer.Screen 
+        name="Turnero" 
+        component={Turnero}
+        options={{ title: 'Turnero' }} 
       />
       <Drawer.Screen 
         name="TurnosAgendados" 

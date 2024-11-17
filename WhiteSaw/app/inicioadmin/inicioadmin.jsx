@@ -26,7 +26,7 @@ const InicioAdmin = () => {
 
   const teachers = [
     'Exequiel Wiedermann',
-    'Sebastian Coillian',
+    'Sebastian Colillan',
     'Christian Cantero',
     'Roque',
     'Nombre Adicional 3',
@@ -140,7 +140,7 @@ const InicioAdmin = () => {
             <View style={InicioAdminStyles.section}>
               <Text style={InicioAdminStyles.sectionTitle}>Profesores</Text>
               <Text>Exequiel Wiedermann</Text>
-              <Text>Sebastian Coillian</Text>
+              <Text>Sebastian Colillan</Text>
               <Text>Christian Cantero</Text>
               <Text>Roque</Text>
               
