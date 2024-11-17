@@ -10,7 +10,7 @@ const InicioAdmin = () => {
   const [showInfoAsesor, setShowInfoAsesor] = useState(false);
   const [showInfoTurno, setShowInfoTurno] = useState(false);
   const [newsText, setNewsText] = useState(
-    'acá se van a poner las noticias que los asesores quieran poner. Por ejemplo: "Hoy las asesora Karina no va venir y se cancelan sus citas antes previstas"'
+    'Informacion a compartir a los usuarios. Por ejemplo: "Hoy la asesora Karina no asistira y se cancelan sus citas antes previstas"'
   );
   const [isEditing, setIsEditing] = useState(false);
   const [showAdvisorsList, setShowAdvisorsList] = useState(false);

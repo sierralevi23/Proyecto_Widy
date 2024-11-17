@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, Image, StyleSheet } from 'react-native';
+import { View, Text, TextInput, Button, Image, StyleSheet, Picker } from 'react-native';
+import { Calendar } from 'react-native-calendars'; // Importa el calendario
 import styles from './turnero_style'; // Importa los estilos
 
 const Turnero = () => {
@@ -9,10 +10,16 @@ const Turnero = () => {
     const [turno, setTurno] = useState('');
     const [fecha, setFecha] = useState('');
     const [motivo, setMotivo] = useState('');
+    const [showCalendar, setShowCalendar] = useState(false); // Estado para mostrar el calendario
 
     const handleSubmit = (e) => {
         e.preventDefault();
         // Aquí puedes manejar el envío del formulario
+    };
+
+    const onDayPress = (day) => {
+        setFecha(day.dateString); // Establece la fecha seleccionada
+        setShowCalendar(false); // Oculta el calendario
     };
 
     return (
@@ -38,18 +45,30 @@ const Turnero = () => {
                     value={email}
                     onChangeText={setEmail}
                 />
-                <TextInput
+                <Picker
+                    selectedValue={turno}
                     style={styles.select}
-                    placeholder="En que turno estas..."
-                    value={turno}
-                    onChangeText={setTurno}
-                />
+                    onValueChange={(itemValue) => setTurno(itemValue)}
+                >
+                    <Picker.Item label="Selecciona un turno..." value="" />
+                    <Picker.Item label="Turno mañana" value="mañana" />
+                    <Picker.Item label="Turno tarde" value="tarde" />
+                    <Picker.Item label="Turno vespertino" value="vespertino" />
+                </Picker>
                 <TextInput
                     style={styles.input}
                     placeholder="Fecha..."
                     value={fecha}
-                    onChangeText={setFecha}
+                    onFocus={() => setShowCalendar(true)} // Muestra el calendario al enfocar
                 />
+                {showCalendar && (
+                    <Calendar
+                        onDayPress={onDayPress}
+                        markedDates={{
+                            [fecha]: { selected: true, marked: true, selectedColor: 'blue' },
+                        }}
+                    />
+                )}
                 <TextInput
                     style={styles.textarea}
                     placeholder="ingrese los motivos..."
