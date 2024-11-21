@@ -46,7 +46,7 @@ const TurnosAgendados = () => {
         }}
       />
 
-      {/* Header fijo */}
+      {/* Header fijo 
       <View style={TurnosAgendadosStyles.header}>
         <Text style={TurnosAgendadosStyles.headerTitle}>Asesoría E.P.E.T N°20</Text>
         <View style={TurnosAgendadosStyles.headerButtons}>
@@ -60,7 +60,7 @@ const TurnosAgendados = () => {
             <Text style={TurnosAgendadosStyles.registerBtnText}>Registrarse</Text>
           </TouchableOpacity>
         </View>
-      </View>
+      </View>*/}
 
       {/* Contenido scrolleable */}
       <ScrollView 

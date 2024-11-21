@@ -7,6 +7,7 @@ import InicioAdmin from '../inicioadmin/inicioadmin';
 import LoginAdmin from '../loginadmin/loginadmin';
 import TurnosAgendados from '../turnosagendados/turnosagendados';
 import Turnero from '../turnero/turnero';
+import Register from '../register/register';
 
 const Drawer = createDrawerNavigator();
 
@@ -48,9 +49,13 @@ const CustomDrawerContent = (props) => {
           <FeatherIcon icon="calendar" size={24} color="#666" />
           <Text style={styles.menuText}>Turnos Agendados</Text>
         </TouchableOpacity>
+        <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('Register')}>
+          <FeatherIcon icon="user-plus" size={24} color="#666" />
+          <Text style={styles.menuText}>Regitrate</Text>
+        </TouchableOpacity>
         <TouchableOpacity style={styles.menuItem} onPress={() => props.navigation.navigate('LoginAdmin')}>
-          <FeatherIcon icon="log-out" size={24} color="#666" />
-          <Text style={styles.menuText}>Cerrar Sesión</Text>
+          <FeatherIcon icon="log-in" size={24} color="#666" />
+          <Text style={styles.menuText}>Iniciar Sesión</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -124,7 +129,20 @@ function DrawerNavigator() {
       <Drawer.Screen 
         name="LoginAdmin" 
         component={LoginAdmin}
-        options={{ title: '' }}
+        options={{
+          headerShown: false,
+          swipeEnabled: false,
+          drawerItemStyle: { display: 'none' }
+        }}
+      />
+      <Drawer.Screen 
+        name="Register" 
+        component={Register}
+        options={{
+          headerShown: false,
+          swipeEnabled: false,
+          drawerItemStyle: { display: 'none' }
+        }}
       />
     </Drawer.Navigator>
   );

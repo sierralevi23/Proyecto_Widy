@@ -2,13 +2,17 @@ import React, { useState } from 'react';
 import FeatherIcon from 'feather-icons-react';
 import { View, Text, TouchableOpacity, TextInput } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { LoginAdminStyles } from './loginadmin_style';
+import { LoginAdminStyles } from '../loginadmin/loginadmin_style';
+import { auth } from '../firebase/firebaseConfig';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
-const LoginAdmin = () => {
+const Register = () => {
   const navigation = useNavigation();
   const [formData, setFormData] = useState({
+    nombre: '',
     email: '',
-    password: ''
+    password: '',
+    confirmPassword: ''
   });
 
   const handleChange = (name, value) => {
@@ -18,20 +22,41 @@ const LoginAdmin = () => {
     }));
   };
 
-  const handleSubmit = () => {
-    console.log('Datos del formulario:', formData);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        formData.email,
+        formData.password
+      );
+      console.log('Usuario registrado:', userCredential.user);
+      // Aquí puedes redirigir al usuario o hacer otras acciones
+    } catch (error) {
+      console.error('Error al registrar:', error.message);
+    }
   };
 
   return (
     <View style={LoginAdminStyles.registroContainer}>
       <View style={LoginAdminStyles.formContainer}>
         <Text style={LoginAdminStyles.titulo}>
-          <FeatherIcon icon="user" size={24} style={{ marginRight: 10 }} />
-          Iniciar Sesión
+          <FeatherIcon icon="user-plus" size={24} style={{ marginRight: 10 }} />
+          Regístrate
         </Text>
-        <Text style={LoginAdminStyles.subtitulo}>
-          Ingresa tu email y contraseña para acceder
-        </Text>
+        <Text style={LoginAdminStyles.subtitulo}>Crea una cuenta para comenzar</Text>
+
+        <View style={LoginAdminStyles.formGroup}>
+          <View style={LoginAdminStyles.inputContainer}>
+            <FeatherIcon icon="user" size={20} style={LoginAdminStyles.inputIcon} />
+            <TextInput
+              style={LoginAdminStyles.input}
+              placeholder="Nombre completo..."
+              value={formData.nombre}
+              onChangeText={(value) => handleChange('nombre', value)}
+            />
+          </View>
+        </View>
 
         <View style={LoginAdminStyles.formGroup}>
           <View style={LoginAdminStyles.inputContainer}>
@@ -51,9 +76,20 @@ const LoginAdmin = () => {
             <TextInput
               style={LoginAdminStyles.input}
               placeholder="Contraseña..."
-              secureTextEntry
               value={formData.password}
               onChangeText={(value) => handleChange('password', value)}
+            />
+          </View>
+        </View>
+
+        <View style={LoginAdminStyles.formGroup}>
+          <View style={LoginAdminStyles.inputContainer}>
+            <FeatherIcon icon="lock" size={20} style={LoginAdminStyles.inputIcon} />
+            <TextInput
+              style={LoginAdminStyles.input}
+              placeholder="Confirmar contraseña..."
+              value={formData.confirmPassword}
+              onChangeText={(value) => handleChange('confirmPassword', value)}
             />
           </View>
         </View>
@@ -62,17 +98,17 @@ const LoginAdmin = () => {
           style={LoginAdminStyles.registroBtn}
           onPress={handleSubmit}
         >
-          <FeatherIcon icon="log-in" size={20} style={{ marginRight: 8 }} />
-          <Text style={{ color: 'white' }}>Iniciar Sesión</Text>
+          <FeatherIcon icon="user-plus" size={20} style={{ marginRight: 8 }} />
+          <Text style={{ color: 'white' }}>Crear cuenta</Text>
         </TouchableOpacity>
 
         <TouchableOpacity 
-          onPress={() => navigation.navigate('Register')}
+          onPress={() => navigation.navigate('LoginAdmin')}
           style={LoginAdminStyles.loginLinks}
         >
           
           <Text style={LoginAdminStyles.yaRegistrado}>
-            ¿No tienes una cuenta? Regístrate
+            ¿Ya tienes una cuenta? Inicia sesión
           </Text>
         </TouchableOpacity>
 
@@ -87,9 +123,10 @@ const LoginAdmin = () => {
             <Text style={LoginAdminStyles.googleLoginText}>Registrarse con Google</Text>
           </TouchableOpacity>
         </View>
+
       </View>
     </View>
   );
 };
 
-export default LoginAdmin;
+export default Register; 

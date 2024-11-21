@@ -1,43 +1,70 @@
 export const LoginAdminStyles = {
     registroContainer: {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'flex-start',
+      alignItems: 'center',
+      minHeight: '100vh',
+      width: '100%',
+      backgroundColor: '#f5f5f5',
+      paddingTop: '20px',
+    },
+    
+    formContainer: {
+      width: '90%',
       maxWidth: '400px',
-      margin: '0 auto',
-      padding: '20px',
-      textAlign: 'center'
+      padding: '30px',
+      backgroundColor: 'white',
+      borderRadius: '8px',
+      boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      marginTop: '25px',
     },
     
     titulo: {
-      marginBottom: '10px'
+      fontSize: '24px',
+      fontWeight: 'bold',
+      marginBottom: '20px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: '100%',
     },
     
     subtitulo: {
       color: '#666',
-      marginBottom: '20px'
+      marginBottom: '30px',
+      textAlign: 'center',
+      width: '100%',
     },
     
     formGroup: {
-      marginBottom: '15px'
+      width: '100%',
+      marginBottom: '20px',
     },
     
     inputContainer: {
       position: 'relative',
-      display: 'flex',
-      alignItems: 'center',
-    },
-    
-    inputIcon: {
-      position: 'absolute',
-      left: '10px',
-      color: '#666',
+      width: '100%',
     },
     
     input: {
       width: '100%',
-      padding: '10px',
-      paddingLeft: '35px',
+      padding: '12px',
+      paddingLeft: '40px',
       border: '1px solid #ddd',
       borderRadius: '4px',
-      fontSize: '16px'
+      fontSize: '16px',
+    },
+    
+    inputIcon: {
+      position: 'absolute',
+      left: '12px',
+      top: '50%',
+      transform: 'translateY(-50%)',
+      color: '#666',
     },
     
     registroBtn: {
@@ -49,25 +76,37 @@ export const LoginAdminStyles = {
       borderRadius: '4px',
       cursor: 'pointer',
       fontSize: '16px',
-      marginBottom: '15px'
+      marginTop: '10px',
+      marginBottom: '20px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
     },
     
     loginLinks: {
-      margin: '15px 0'
+      width: '100%',
+      textAlign: 'center',
+      margin: '15px 0',
     },
     
     yaRegistrado: {
       color: '#666',
-      textDecoration: 'none'
+      textDecoration: 'none',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: '5px',
     },
     
-    googleBtn: {
-      margin: '15px 0'
+    googleBtn: {  
+      width: '60%',
+      marginTop: '15px',
+      alignSelf: 'center',
     },
     
     googleLoginBtn: {
       width: '100%',
-      padding: '12px',
+      padding: '6px',
       backgroundColor: '#ffffff',
       border: '1px solid #dadce0',
       borderRadius: '4px',
@@ -75,26 +114,15 @@ export const LoginAdminStyles = {
       alignItems: 'center',
       justifyContent: 'center',
       cursor: 'pointer',
-      fontSize: '14px',
+      fontSize: '12px',
       fontWeight: '500',
       color: '#3c4043',
-      transition: 'background-color 0.2s',
-      gap: '12px',
+      gap: '6px',
     },
     
     googleIcon: {
-      width: '18px',
-      height: '18px',
-    },
-    
-    terms: {
-      fontSize: '12px',
-      color: '#666',
-      marginTop: '20px'
-    },
-    
-    termsLink: {
-      color: '#000',
-      textDecoration: 'none'
+      width: '16px',
+      height: '16px',
+      marginRight: '5px'
     }
-  };
+};
